@@ -1,8 +1,10 @@
 project:
   type: website
   output-dir: docs
-  render:
+  render: 
     - index.qmd
+    - artist-datamodel.qmd
+    - exhibition-datamodel.qmd
     - project-log.qmd
     - wikidata.qmd
     - wikidata-item.ipynb
@@ -13,6 +15,10 @@ website:
     left:
       - href: index.qmd
         text: Home
+      - href: artist-datamodel.qmd
+        text: Künstler-Datamodel
+      - href: exhibition-datamodel.qmd
+        text: Ausstellung-Datamodel
       - href: project-log.qmd
         text: Project Log
       - href: wikidata.qmd
