@@ -8,10 +8,11 @@ project:
     - project-log.qmd
     - wikidata.qmd
     - wikidata-item.ipynb
-  metadata:
+metadata:
+  authors:
     - name: "Rahaf Raad"
       orcid: "0009-0002-4461-8235"
-      
+
 website:
   title: "BIM Prototype 02"
   navbar:
