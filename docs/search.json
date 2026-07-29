@@ -49,6 +49,97 @@
     "text": "Use these steps to publish and re-publish the site to GitHub Pages.\n\nCommit and push updates to main.\nIn GitHub, open Settings -&gt; Pages.\nUnder Build and deployment, set Source to GitHub Actions.\nConfirm the workflow file .github/workflows/publish.yml is present.\nWait for the Publish Quarto Site workflow to complete.\n\n\n\n\nOpen Actions in GitHub.\nSelect Publish Quarto Site.\nClick Run workflow and choose main.\n\n\n\n\n\nRe-check Settings -&gt; Pages is enabled for GitHub Actions.\nRe-run the workflow after enabling Pages."
   },
   {
+    "objectID": "exhibition-datamodel.html",
+    "href": "exhibition-datamodel.html",
+    "title": "Exhibition Data Model",
+    "section": "",
+    "text": "This data model provides a standardized schema for describing exhibitions and their contextual information within the Linked Open Exhibition ecosystem. It is aligned with three major sector standards:\n\nCIDOC CRM (Conceptual Reference Model) v7.1.3\nWikibase4Research (WB4R) - NFDI4Culture platform\nWikidata - WikiProject Exhibitions"
+  },
+  {
+    "objectID": "exhibition-datamodel.html#overview",
+    "href": "exhibition-datamodel.html#overview",
+    "title": "Exhibition Data Model",
+    "section": "",
+    "text": "This data model provides a standardized schema for describing exhibitions and their contextual information within the Linked Open Exhibition ecosystem. It is aligned with three major sector standards:\n\nCIDOC CRM (Conceptual Reference Model) v7.1.3\nWikibase4Research (WB4R) - NFDI4Culture platform\nWikidata - WikiProject Exhibitions"
+  },
+  {
+    "objectID": "exhibition-datamodel.html#quick-reference-schema-mappings",
+    "href": "exhibition-datamodel.html#quick-reference-schema-mappings",
+    "title": "Exhibition Data Model",
+    "section": "Quick Reference: Schema Mappings",
+    "text": "Quick Reference: Schema Mappings\n\n\n\n\n\n\n\n\n\nField\nWikidata\nCIDOC CRM\nWikibase4Research\n\n\n\n\nInstance of\nP31:Q464980 (exhibition)\nE21_Person / E55_Type\ncrm:P2_has_type\n\n\nTitle\nP1476\nP1_is_identified_by (E82_Appellation)\nwgm:title (P4)\n\n\nLocation\nP276\nP7_took_place_at\nwgm:has_occupation\n\n\nStart Time\nP580\nP4_has_time-span (E52_Time-Span)\nwgm:birth\n\n\nEnd Time\nP582\nP4_has_time-span (E52_Time-Span)\nwgm:death\n\n\nCurator\nP1640\nP14_carried_out_by\nwgm:classified_as\n\n\nParticipant\nP710\nP11_had_participant (E42_Identifier)\nwgm:stated_in\n\n\nOfficial Website\nP856\nP1_is_identified_by (E78_Primitive_Data)\nnot found\n\n\nOrganizer\nP664\nP14_carried_out_by\nsame as Wikidata\n\n\nCountry\nP17\nP7_took_place_at\nsame as Wikidata\n\n\nLanguage\nP407\nP72_has_language\nsame as Wikidata\n\n\nTheme\nP921\nP129_is_about\nsame as Wikidata\n\n\nSponsor\nP859\nnot found\nnot found\n\n\nNumber of Visitors\nP1174\nnot found\nnot found\n\n\nReference\nQID\nP1_is_identified_by (E42_Identifier)\nsame as Wikidata\n\n\nCommons Category\nP373\nP1_is_identified_by (E78_Primitive_Data)\nsame as Wikidata"
+  },
+  {
+    "objectID": "exhibition-datamodel.html#example-sprengel-museum-exhibition-q138573075",
+    "href": "exhibition-datamodel.html#example-sprengel-museum-exhibition-q138573075",
+    "title": "Exhibition Data Model",
+    "section": "Example: Sprengel Museum Exhibition (Q138573075)",
+    "text": "Example: Sprengel Museum Exhibition (Q138573075)\nName: Sprengel Museum Exhibition\nLocation: Sprengel Museum Hannover (Q510144)\nStart Date: 2024-01-15\nEnd Date: 2024-06-30\nCurator: [Person Item]\nParticipants: Various artists\nOfficial Website: https://www.sprengel-museum.de/\nOrganizer: Sprengel Museum\nCountry: Germany (Q183)\nLanguage: German (Q188)\nReference: https://www.wikidata.org/wiki/Q138573075"
+  },
+  {
+    "objectID": "exhibition-datamodel.html#data-structure",
+    "href": "exhibition-datamodel.html#data-structure",
+    "title": "Exhibition Data Model",
+    "section": "Data Structure",
+    "text": "Data Structure\n\n1. Instance of Exhibition\n\n\n\nField\nValue\n\n\n\n\nGerman Label\nist ein(e)\n\n\nEnglish Label\nInstance of\n\n\nDescription\nThe item itself is classified as an exhibition\n\n\nData Type\nItem\n\n\nWikidata Property\nP31\n\n\nRecommended Value\nQ464980 (Exhibition)\n\n\n\n\nSchema Mappings\n\n\n\nStandard\nProperty\nDescription\n\n\n\n\nWikidata\nP31:Q464980\nInstance of exhibition\n\n\nCIDOC CRM\nE55_Type\nType classification\n\n\nWB4R\ncrm:P2_has_type\nType property in Wikibase4Research\n\n\n\n\n\n\n\n2. Title\n\n\n\nField\nValue\n\n\n\n\nGerman Label\nTitel\n\n\nEnglish Label\nTitle\n\n\nDescription\nOfficial name/title of the exhibition\n\n\nData Type\nMonolingual text\n\n\nWikidata Property\nP1476\n\n\nFormat\nPlain text\n\n\n\n\nSchema Mappings\n\n\n\n\n\n\n\n\nStandard\nProperty\nDescription\n\n\n\n\nWikidata\nP1476\nTitle of the exhibition\n\n\nCIDOC CRM\nP1_is_identified_by (E82_Appellation)\nIdentifies exhibition through naming\n\n\nWB4R\nwgm:title (P4)\nTitle property in WB4R\n\n\n\n\n\n\n\n3. Location\n\n\n\nField\nValue\n\n\n\n\nGerman Label\nOrt\n\n\nEnglish Label\nLocation\n\n\nDescription\nThe place where the exhibition took place\n\n\nData Type\nItem (reference to place/institution)\n\n\nWikidata Property\nP276\n\n\nExample\nSprengel Museum Hannover (Q510144)\n\n\n\n\nSchema Mappings\n\n\n\nStandard\nProperty\nDescription\n\n\n\n\nWikidata\nP276\nLocation of exhibition\n\n\nCIDOC CRM\nP7_took_place_at\nEvent took place at location\n\n\nWB4R\nwgm:has_occupation\nRelated place reference\n\n\n\n\n\n\n\n4. Start Time\n\n\n\nField\nValue\n\n\n\n\nGerman Label\nStartzeitpunkt\n\n\nEnglish Label\nStart time\n\n\nDescription\nDate when the exhibition opened\n\n\nData Type\nPoint in time\n\n\nWikidata Property\nP580\n\n\nFormat\nYYYY-MM-DD\n\n\n\n\nSchema Mappings\n\n\n\n\n\n\n\n\nStandard\nProperty\nDescription\n\n\n\n\nWikidata\nP580\nStart time of exhibition\n\n\nCIDOC CRM\nP4_has_time-span (E52_Time-Span)\nEvent time-span definition\n\n\nWB4R\nwgm:birth\nStart date mapping\n\n\n\n\n\n\n\n5. End Time\n\n\n\nField\nValue\n\n\n\n\nGerman Label\nEndzeitpunkt\n\n\nEnglish Label\nEnd time\n\n\nDescription\nDate when the exhibition closed\n\n\nData Type\nPoint in time\n\n\nWikidata Property\nP582\n\n\nFormat\nYYYY-MM-DD\n\n\n\n\nSchema Mappings\n\n\n\n\n\n\n\n\nStandard\nProperty\nDescription\n\n\n\n\nWikidata\nP582\nEnd time of exhibition\n\n\nCIDOC CRM\nP4_has_time-span (E52_Time-Span)\nEvent time-span definition\n\n\nWB4R\nwgm:death\nEnd date mapping\n\n\n\n\n\n\n\n6. Curator\n\n\n\nField\nValue\n\n\n\n\nGerman Label\nKurator\n\n\nEnglish Label\nCurator\n\n\nDescription\nPerson responsible for curating the exhibition\n\n\nData Type\nItem (reference to person)\n\n\nWikidata Property\nP1640\n\n\nNote\nCreate person item if it doesn’t exist\n\n\n\n\nSchema Mappings\n\n\n\nStandard\nProperty\nDescription\n\n\n\n\nWikidata\nP1640\nCurator of exhibition\n\n\nCIDOC CRM\nP14_carried_out_by\nEvent carried out by person\n\n\nWB4R\nwgm:classified_as (P97)\nClassification reference\n\n\n\n\n\n\n\n7. Participant\n\n\n\n\n\n\n\nField\nValue\n\n\n\n\nGerman Label\nTeilnehmer\n\n\nEnglish Label\nParticipant\n\n\nDescription\nArtists or entities participating in the exhibition\n\n\nData Type\nItem (reference to person/artist)\n\n\nWikidata Property\nP710\n\n\nNote\nCan reference multiple participants\n\n\n\n\nSchema Mappings\n\n\n\n\n\n\n\n\nStandard\nProperty\nDescription\n\n\n\n\nWikidata\nP710\nParticipant in exhibition\n\n\nCIDOC CRM\nP11_had_participant (E42_Identifier)\nEvent had participant\n\n\nWB4R\nwgm:stated_in\nStated in reference\n\n\n\n\n\n\n\n8. Official Website\n\n\n\nField\nValue\n\n\n\n\nGerman Label\noffizielle Website\n\n\nEnglish Label\nOfficial website\n\n\nDescription\nURL of the exhibition’s official website\n\n\nData Type\nURL\n\n\nWikidata Property\nP856\n\n\nFormat\nhttps://…\n\n\n\n\nSchema Mappings\n\n\n\n\n\n\n\n\nStandard\nProperty\nDescription\n\n\n\n\nWikidata\nP856\nOfficial website\n\n\nCIDOC CRM\nP1_is_identified_by (E78_Primitive_Data)\nDigital location identifier\n\n\nWB4R\nnot found\nNo WB4R mapping available\n\n\n\n\n\n\n\n9. Organizer\n\n\n\nField\nValue\n\n\n\n\nGerman Label\nVeranstalter\n\n\nEnglish Label\nOrganizer\n\n\nDescription\nInstitution or person organizing the exhibition\n\n\nData Type\nItem (reference to institution/person)\n\n\nWikidata Property\nP664\n\n\n\n\nSchema Mappings\n\n\n\n\n\n\n\n\nStandard\nProperty\nDescription\n\n\n\n\nWikidata\nP664\nOrganizer of exhibition\n\n\nCIDOC CRM\nP14_carried_out_by\nEvent carried out by organizer\n\n\nWB4R\nSame as Wikidata\nAligned with Wikidata\n\n\n\n\n\n\n\n10. Country\n\n\n\nField\nValue\n\n\n\n\nGerman Label\nLand\n\n\nEnglish Label\nCountry\n\n\nDescription\nCountry where the exhibition took place\n\n\nData Type\nItem (reference to country)\n\n\nWikidata Property\nP17\n\n\n\n\nSchema Mappings\n\n\n\nStandard\nProperty\nDescription\n\n\n\n\nWikidata\nP17\nCountry\n\n\nCIDOC CRM\nP7_took_place_at\nEvent location (country)\n\n\nWB4R\nSame as Wikidata\nAligned with Wikidata\n\n\n\n\n\n\n\n11. Language\n\n\n\nField\nValue\n\n\n\n\nGerman Label\nSprache\n\n\nEnglish Label\nLanguage\n\n\nDescription\nLanguage(s) of the exhibition materials\n\n\nData Type\nItem (reference to language)\n\n\nWikidata Property\nP407\n\n\n\n\nSchema Mappings\n\n\n\nStandard\nProperty\nDescription\n\n\n\n\nWikidata\nP407\nLanguage of exhibition\n\n\nCIDOC CRM\nP72_has_language\nEntity has language\n\n\nWB4R\nSame as Wikidata\nAligned with Wikidata\n\n\n\n\n\n\n\n12. Theme\n\n\n\nField\nValue\n\n\n\n\nGerman Label\nThema\n\n\nEnglish Label\nTheme\n\n\nDescription\nMain subject or topic of the exhibition\n\n\nData Type\nItem (reference to topic)\n\n\nWikidata Property\nP921\n\n\n\n\nSchema Mappings\n\n\n\nStandard\nProperty\nDescription\n\n\n\n\nWikidata\nP921\nMain subject of exhibition\n\n\nCIDOC CRM\nP129_is_about\nEntity is about topic\n\n\nWB4R\nSame as Wikidata\nAligned with Wikidata\n\n\n\n\n\n\n\n13. Sponsor\n\n\n\nField\nValue\n\n\n\n\nGerman Label\nSponsor\n\n\nEnglish Label\nSponsor\n\n\nDescription\nOrganization or entity sponsoring the exhibition\n\n\nData Type\nItem\n\n\nWikidata Property\nP859\n\n\n\n\nSchema Mappings\n\n\n\nStandard\nProperty\nDescription\n\n\n\n\nWikidata\nP859\nSponsor of exhibition\n\n\nCIDOC CRM\nnot found\nNo direct CRM mapping\n\n\nWB4R\nNot found\nNo WB4R mapping available\n\n\n\n\n\n\n\n14. Number of Visitors\n\n\n\nField\nValue\n\n\n\n\nGerman Label\nBesucherzahl\n\n\nEnglish Label\nNumber of visitors\n\n\nDescription\nTotal number of visitors to the exhibition\n\n\nData Type\nQuantity\n\n\nWikidata Property\nP1174\n\n\nFormat\nNumeric value\n\n\n\n\nSchema Mappings\n\n\n\nStandard\nProperty\nDescription\n\n\n\n\nWikidata\nP1174\nNumber of visitors\n\n\nCIDOC CRM\nnot found\nNo direct CRM mapping\n\n\nWB4R\nNot found\nNo WB4R mapping available\n\n\n\n\n\n\n\n15. Reference\n\n\n\nField\nValue\n\n\n\n\nGerman Label\nReferenz\n\n\nEnglish Label\nReference\n\n\nDescription\nWikidata QID or external identifier URI\n\n\nData Type\nURI\n\n\nFormat\nQ-identifier or full URI\n\n\n\n\nSchema Mappings\n\n\n\n\n\n\n\n\nStandard\nProperty\nDescription\n\n\n\n\nWikidata\nQID\nWikidata identifier\n\n\nCIDOC CRM\nP1_is_identified_by (E42_Identifier)\nIdentifier for entity\n\n\nWB4R\nSame as Wikidata\nAligned with Wikidata\n\n\n\n\n\n\n\n16. Commons Category\n\n\n\nField\nValue\n\n\n\n\nGerman Label\nCommons-Kategorie\n\n\nEnglish Label\nCommons category\n\n\nDescription\nWikimedia Commons category for exhibition images\n\n\nData Type\nString\n\n\nWikidata Property\nP373\n\n\n\n\nSchema Mappings\n\n\n\n\n\n\n\n\nStandard\nProperty\nDescription\n\n\n\n\nWikidata\nP373\nCommons category\n\n\nCIDOC CRM\nP1_is_identified_by (E78_Primitive_Data)\nDigital resource identifier\n\n\nWB4R\nSame as Wikidata\nAligned with Wikidata"
+  },
+  {
+    "objectID": "exhibition-datamodel.html#best-practices-for-exhibition-records",
+    "href": "exhibition-datamodel.html#best-practices-for-exhibition-records",
+    "title": "Exhibition Data Model",
+    "section": "Best Practices for Exhibition Records",
+    "text": "Best Practices for Exhibition Records\n\nUse QIDs for References: Always link to existing Wikidata items when available (Q464980 for exhibitions, institution Q-numbers, country Q-numbers, etc.)\nDate Formatting: Use ISO 8601 format (YYYY-MM-DD) for all temporal data. For exhibitions spanning years, precision can be reduced to YYYY (year only).\nMultilingual Titles: Where applicable, add exhibition titles in multiple languages using separate items or monolingual text fields.\nInstitutional Context: Link to the organizing institution’s Wikidata item (P17 for country, P664 for organizer) to enable cross-institutional exhibition discovery.\nParticipant Documentation: Ensure all participating artists have Wikidata items. Create items for lesser-known artists to enrich the knowledge graph.\nCommons Integration: Regularly link exhibition items to Wikimedia Commons categories (P373) to support multimedia documentation and community contributions."
+  },
+  {
+    "objectID": "exhibition-datamodel.html#related-standards-references",
+    "href": "exhibition-datamodel.html#related-standards-references",
+    "title": "Exhibition Data Model",
+    "section": "Related Standards & References",
+    "text": "Related Standards & References\n\nCIDOC CRM v7.1.3 - Formal ontology standard for cultural heritage\nWikibase4Research (WB4R) - NFDI4Culture platform implementation\nWikidata WikiProject Exhibitions - Community guidelines for exhibition properties\nWikidata Main Properties Guide - Core Wikidata documentation\nLinked Open Exhibition Project - Project repository"
+  },
+  {
+    "objectID": "exhibition-datamodel.html#contact-contributions",
+    "href": "exhibition-datamodel.html#contact-contributions",
+    "title": "Exhibition Data Model",
+    "section": "Contact & Contributions",
+    "text": "Contact & Contributions\nFor updates to this data model or suggestions for improvement, please contact the NFDI4Culture Linked Open Exhibition project team or contribute via GitHub."
+  },
+  {
+    "objectID": "exhibition-datamodel.html#attribution",
+    "href": "exhibition-datamodel.html#attribution",
+    "title": "Exhibition Data Model",
+    "section": "Attribution",
+    "text": "Attribution\nThis data model documentation was created with assistance from GitHub Copilot (powered by Claude Haiku 4.5). The model was aligned against sector standards including CIDOC CRM v7.1.3, Wikibase4Research, and Wikidata WikiProject Exhibitions guidelines through AI-assisted analysis and formatting."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Home",
+    "section": "",
+    "text": "This is the Quarto website source for the BIM prototype project.\n\n\n\nWikidata Item Profile: Q138573017\n\n\n\n\n\n\n\nInitialized the Quarto website and GitHub Pages workflow.\nSwitched Quarto output to docs for publishing.\nAdded a notebook-backed Wikidata item profile page with SPARQL-driven data rendering.\nAdded reusable query/render helper logic in wikidata_profile.py.\nAdded profile visual summaries and parameterized item_id input.\nSee full details in the Project Log.\n\n\n\n\n\n\nAdd your project overview and goals.\nAdd additional pages as the project grows.\nPublish automatically via GitHub Pages."
+  },
+  {
+    "objectID": "index.html#featured-page",
+    "href": "index.html#featured-page",
+    "title": "Home",
+    "section": "",
+    "text": "Wikidata Item Profile: Q138573017"
+  },
+  {
+    "objectID": "index.html#changelog",
+    "href": "index.html#changelog",
+    "title": "Home",
+    "section": "",
+    "text": "Initialized the Quarto website and GitHub Pages workflow.\nSwitched Quarto output to docs for publishing.\nAdded a notebook-backed Wikidata item profile page with SPARQL-driven data rendering.\nAdded reusable query/render helper logic in wikidata_profile.py.\nAdded profile visual summaries and parameterized item_id input.\nSee full details in the Project Log."
+  },
+  {
+    "objectID": "index.html#next-steps",
+    "href": "index.html#next-steps",
+    "title": "Home",
+    "section": "",
+    "text": "Add your project overview and goals.\nAdd additional pages as the project grows.\nPublish automatically via GitHub Pages."
+  },
+  {
     "objectID": "artist-datamodel.html",
     "href": "artist-datamodel.html",
     "title": "Artist Data Model",
@@ -112,95 +203,32 @@
     "text": "Attribution\nThis data model documentation was created with assistance from GitHub Copilot (powered by Claude Haiku 4.5). The model was aligned against sector standards including CIDOC CRM v7.1.3, Wikibase4Research, and Wikidata WikiProject Exhibitions guidelines through AI-assisted analysis and formatting."
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Home",
+    "objectID": "exhibition.html",
+    "href": "exhibition.html",
+    "title": "Ausstellung",
     "section": "",
-    "text": "This is the Quarto website source for the BIM prototype project.\n\n\n\nWikidata Item Profile: Q138573017\n\n\n\n\n\n\n\nInitialized the Quarto website and GitHub Pages workflow.\nSwitched Quarto output to docs for publishing.\nAdded a notebook-backed Wikidata item profile page with SPARQL-driven data rendering.\nAdded reusable query/render helper logic in wikidata_profile.py.\nAdded profile visual summaries and parameterized item_id input.\nSee full details in the Project Log.\n\n\n\n\n\n\nAdd your project overview and goals.\nAdd additional pages as the project grows.\nPublish automatically via GitHub Pages."
+    "text": "Diese Seite beschreibt die Ausstellung im Rahmen des BIM Prototype 02-Projekts.\n\n\nDie Ausstellung stellt die Verbindung zwischen kulturellem Kontext, Datenmodellierung und Wikidata dar. Sie dient als Einstiegspunkt für die Erkundung von Objekten, Personen und deren Beziehungen.\n\n\n\n\nWikidata-QID: Q138573017\nDie Seite kann später um zusätzliche Metadaten, Bildmaterial oder verknüpfte Entitäten erweitert werden.\n\n\n\n\n\nDie Ausstellung sichtbar machen\nEine einfache Quarto-Seite für die Präsentation bereitstellen\nDie Verbindung zu strukturierten Daten aus Wikidata zeigen"
   },
   {
-    "objectID": "index.html#featured-page",
-    "href": "index.html#featured-page",
-    "title": "Home",
+    "objectID": "exhibition.html#kurzbeschreibung",
+    "href": "exhibition.html#kurzbeschreibung",
+    "title": "Ausstellung",
     "section": "",
-    "text": "Wikidata Item Profile: Q138573017"
+    "text": "Die Ausstellung stellt die Verbindung zwischen kulturellem Kontext, Datenmodellierung und Wikidata dar. Sie dient als Einstiegspunkt für die Erkundung von Objekten, Personen und deren Beziehungen."
   },
   {
-    "objectID": "index.html#changelog",
-    "href": "index.html#changelog",
-    "title": "Home",
+    "objectID": "exhibition.html#wikidata-referenz",
+    "href": "exhibition.html#wikidata-referenz",
+    "title": "Ausstellung",
     "section": "",
-    "text": "Initialized the Quarto website and GitHub Pages workflow.\nSwitched Quarto output to docs for publishing.\nAdded a notebook-backed Wikidata item profile page with SPARQL-driven data rendering.\nAdded reusable query/render helper logic in wikidata_profile.py.\nAdded profile visual summaries and parameterized item_id input.\nSee full details in the Project Log."
+    "text": "Wikidata-QID: Q138573017\nDie Seite kann später um zusätzliche Metadaten, Bildmaterial oder verknüpfte Entitäten erweitert werden."
   },
   {
-    "objectID": "index.html#next-steps",
-    "href": "index.html#next-steps",
-    "title": "Home",
+    "objectID": "exhibition.html#ziel-der-seite",
+    "href": "exhibition.html#ziel-der-seite",
+    "title": "Ausstellung",
     "section": "",
-    "text": "Add your project overview and goals.\nAdd additional pages as the project grows.\nPublish automatically via GitHub Pages."
-  },
-  {
-    "objectID": "exhibition-datamodel.html",
-    "href": "exhibition-datamodel.html",
-    "title": "Exhibition Data Model",
-    "section": "",
-    "text": "This data model provides a standardized schema for describing exhibitions and their contextual information within the Linked Open Exhibition ecosystem. It is aligned with three major sector standards:\n\nCIDOC CRM (Conceptual Reference Model) v7.1.3\nWikibase4Research (WB4R) - NFDI4Culture platform\nWikidata - WikiProject Exhibitions"
-  },
-  {
-    "objectID": "exhibition-datamodel.html#overview",
-    "href": "exhibition-datamodel.html#overview",
-    "title": "Exhibition Data Model",
-    "section": "",
-    "text": "This data model provides a standardized schema for describing exhibitions and their contextual information within the Linked Open Exhibition ecosystem. It is aligned with three major sector standards:\n\nCIDOC CRM (Conceptual Reference Model) v7.1.3\nWikibase4Research (WB4R) - NFDI4Culture platform\nWikidata - WikiProject Exhibitions"
-  },
-  {
-    "objectID": "exhibition-datamodel.html#quick-reference-schema-mappings",
-    "href": "exhibition-datamodel.html#quick-reference-schema-mappings",
-    "title": "Exhibition Data Model",
-    "section": "Quick Reference: Schema Mappings",
-    "text": "Quick Reference: Schema Mappings\n\n\n\n\n\n\n\n\n\nField\nWikidata\nCIDOC CRM\nWikibase4Research\n\n\n\n\nInstance of\nP31:Q464980 (exhibition)\nE21_Person / E55_Type\ncrm:P2_has_type\n\n\nTitle\nP1476\nP1_is_identified_by (E82_Appellation)\nwgm:title (P4)\n\n\nLocation\nP276\nP7_took_place_at\nwgm:has_occupation\n\n\nStart Time\nP580\nP4_has_time-span (E52_Time-Span)\nwgm:birth\n\n\nEnd Time\nP582\nP4_has_time-span (E52_Time-Span)\nwgm:death\n\n\nCurator\nP1640\nP14_carried_out_by\nwgm:classified_as\n\n\nParticipant\nP710\nP11_had_participant (E42_Identifier)\nwgm:stated_in\n\n\nOfficial Website\nP856\nP1_is_identified_by (E78_Primitive_Data)\nnot found\n\n\nOrganizer\nP664\nP14_carried_out_by\nsame as Wikidata\n\n\nCountry\nP17\nP7_took_place_at\nsame as Wikidata\n\n\nLanguage\nP407\nP72_has_language\nsame as Wikidata\n\n\nTheme\nP921\nP129_is_about\nsame as Wikidata\n\n\nSponsor\nP859\nnot found\nnot found\n\n\nNumber of Visitors\nP1174\nnot found\nnot found\n\n\nReference\nQID\nP1_is_identified_by (E42_Identifier)\nsame as Wikidata\n\n\nCommons Category\nP373\nP1_is_identified_by (E78_Primitive_Data)\nsame as Wikidata"
-  },
-  {
-    "objectID": "exhibition-datamodel.html#example-sprengel-museum-exhibition-q138573075",
-    "href": "exhibition-datamodel.html#example-sprengel-museum-exhibition-q138573075",
-    "title": "Exhibition Data Model",
-    "section": "Example: Sprengel Museum Exhibition (Q138573075)",
-    "text": "Example: Sprengel Museum Exhibition (Q138573075)\nName: Sprengel Museum Exhibition\nLocation: Sprengel Museum Hannover (Q510144)\nStart Date: 2024-01-15\nEnd Date: 2024-06-30\nCurator: [Person Item]\nParticipants: Various artists\nOfficial Website: https://www.sprengel-museum.de/\nOrganizer: Sprengel Museum\nCountry: Germany (Q183)\nLanguage: German (Q188)\nReference: https://www.wikidata.org/wiki/Q138573075"
-  },
-  {
-    "objectID": "exhibition-datamodel.html#data-structure",
-    "href": "exhibition-datamodel.html#data-structure",
-    "title": "Exhibition Data Model",
-    "section": "Data Structure",
-    "text": "Data Structure\n\n1. Instance of Exhibition\n\n\n\nField\nValue\n\n\n\n\nGerman Label\nist ein(e)\n\n\nEnglish Label\nInstance of\n\n\nDescription\nThe item itself is classified as an exhibition\n\n\nData Type\nItem\n\n\nWikidata Property\nP31\n\n\nRecommended Value\nQ464980 (Exhibition)\n\n\n\n\nSchema Mappings\n\n\n\nStandard\nProperty\nDescription\n\n\n\n\nWikidata\nP31:Q464980\nInstance of exhibition\n\n\nCIDOC CRM\nE55_Type\nType classification\n\n\nWB4R\ncrm:P2_has_type\nType property in Wikibase4Research\n\n\n\n\n\n\n\n2. Title\n\n\n\nField\nValue\n\n\n\n\nGerman Label\nTitel\n\n\nEnglish Label\nTitle\n\n\nDescription\nOfficial name/title of the exhibition\n\n\nData Type\nMonolingual text\n\n\nWikidata Property\nP1476\n\n\nFormat\nPlain text\n\n\n\n\nSchema Mappings\n\n\n\n\n\n\n\n\nStandard\nProperty\nDescription\n\n\n\n\nWikidata\nP1476\nTitle of the exhibition\n\n\nCIDOC CRM\nP1_is_identified_by (E82_Appellation)\nIdentifies exhibition through naming\n\n\nWB4R\nwgm:title (P4)\nTitle property in WB4R\n\n\n\n\n\n\n\n3. Location\n\n\n\nField\nValue\n\n\n\n\nGerman Label\nOrt\n\n\nEnglish Label\nLocation\n\n\nDescription\nThe place where the exhibition took place\n\n\nData Type\nItem (reference to place/institution)\n\n\nWikidata Property\nP276\n\n\nExample\nSprengel Museum Hannover (Q510144)\n\n\n\n\nSchema Mappings\n\n\n\nStandard\nProperty\nDescription\n\n\n\n\nWikidata\nP276\nLocation of exhibition\n\n\nCIDOC CRM\nP7_took_place_at\nEvent took place at location\n\n\nWB4R\nwgm:has_occupation\nRelated place reference\n\n\n\n\n\n\n\n4. Start Time\n\n\n\nField\nValue\n\n\n\n\nGerman Label\nStartzeitpunkt\n\n\nEnglish Label\nStart time\n\n\nDescription\nDate when the exhibition opened\n\n\nData Type\nPoint in time\n\n\nWikidata Property\nP580\n\n\nFormat\nYYYY-MM-DD\n\n\n\n\nSchema Mappings\n\n\n\n\n\n\n\n\nStandard\nProperty\nDescription\n\n\n\n\nWikidata\nP580\nStart time of exhibition\n\n\nCIDOC CRM\nP4_has_time-span (E52_Time-Span)\nEvent time-span definition\n\n\nWB4R\nwgm:birth\nStart date mapping\n\n\n\n\n\n\n\n5. End Time\n\n\n\nField\nValue\n\n\n\n\nGerman Label\nEndzeitpunkt\n\n\nEnglish Label\nEnd time\n\n\nDescription\nDate when the exhibition closed\n\n\nData Type\nPoint in time\n\n\nWikidata Property\nP582\n\n\nFormat\nYYYY-MM-DD\n\n\n\n\nSchema Mappings\n\n\n\n\n\n\n\n\nStandard\nProperty\nDescription\n\n\n\n\nWikidata\nP582\nEnd time of exhibition\n\n\nCIDOC CRM\nP4_has_time-span (E52_Time-Span)\nEvent time-span definition\n\n\nWB4R\nwgm:death\nEnd date mapping\n\n\n\n\n\n\n\n6. Curator\n\n\n\nField\nValue\n\n\n\n\nGerman Label\nKurator\n\n\nEnglish Label\nCurator\n\n\nDescription\nPerson responsible for curating the exhibition\n\n\nData Type\nItem (reference to person)\n\n\nWikidata Property\nP1640\n\n\nNote\nCreate person item if it doesn’t exist\n\n\n\n\nSchema Mappings\n\n\n\nStandard\nProperty\nDescription\n\n\n\n\nWikidata\nP1640\nCurator of exhibition\n\n\nCIDOC CRM\nP14_carried_out_by\nEvent carried out by person\n\n\nWB4R\nwgm:classified_as (P97)\nClassification reference\n\n\n\n\n\n\n\n7. Participant\n\n\n\n\n\n\n\nField\nValue\n\n\n\n\nGerman Label\nTeilnehmer\n\n\nEnglish Label\nParticipant\n\n\nDescription\nArtists or entities participating in the exhibition\n\n\nData Type\nItem (reference to person/artist)\n\n\nWikidata Property\nP710\n\n\nNote\nCan reference multiple participants\n\n\n\n\nSchema Mappings\n\n\n\n\n\n\n\n\nStandard\nProperty\nDescription\n\n\n\n\nWikidata\nP710\nParticipant in exhibition\n\n\nCIDOC CRM\nP11_had_participant (E42_Identifier)\nEvent had participant\n\n\nWB4R\nwgm:stated_in\nStated in reference\n\n\n\n\n\n\n\n8. Official Website\n\n\n\nField\nValue\n\n\n\n\nGerman Label\noffizielle Website\n\n\nEnglish Label\nOfficial website\n\n\nDescription\nURL of the exhibition’s official website\n\n\nData Type\nURL\n\n\nWikidata Property\nP856\n\n\nFormat\nhttps://…\n\n\n\n\nSchema Mappings\n\n\n\n\n\n\n\n\nStandard\nProperty\nDescription\n\n\n\n\nWikidata\nP856\nOfficial website\n\n\nCIDOC CRM\nP1_is_identified_by (E78_Primitive_Data)\nDigital location identifier\n\n\nWB4R\nnot found\nNo WB4R mapping available\n\n\n\n\n\n\n\n9. Organizer\n\n\n\nField\nValue\n\n\n\n\nGerman Label\nVeranstalter\n\n\nEnglish Label\nOrganizer\n\n\nDescription\nInstitution or person organizing the exhibition\n\n\nData Type\nItem (reference to institution/person)\n\n\nWikidata Property\nP664\n\n\n\n\nSchema Mappings\n\n\n\n\n\n\n\n\nStandard\nProperty\nDescription\n\n\n\n\nWikidata\nP664\nOrganizer of exhibition\n\n\nCIDOC CRM\nP14_carried_out_by\nEvent carried out by organizer\n\n\nWB4R\nSame as Wikidata\nAligned with Wikidata\n\n\n\n\n\n\n\n10. Country\n\n\n\nField\nValue\n\n\n\n\nGerman Label\nLand\n\n\nEnglish Label\nCountry\n\n\nDescription\nCountry where the exhibition took place\n\n\nData Type\nItem (reference to country)\n\n\nWikidata Property\nP17\n\n\n\n\nSchema Mappings\n\n\n\nStandard\nProperty\nDescription\n\n\n\n\nWikidata\nP17\nCountry\n\n\nCIDOC CRM\nP7_took_place_at\nEvent location (country)\n\n\nWB4R\nSame as Wikidata\nAligned with Wikidata\n\n\n\n\n\n\n\n11. Language\n\n\n\nField\nValue\n\n\n\n\nGerman Label\nSprache\n\n\nEnglish Label\nLanguage\n\n\nDescription\nLanguage(s) of the exhibition materials\n\n\nData Type\nItem (reference to language)\n\n\nWikidata Property\nP407\n\n\n\n\nSchema Mappings\n\n\n\nStandard\nProperty\nDescription\n\n\n\n\nWikidata\nP407\nLanguage of exhibition\n\n\nCIDOC CRM\nP72_has_language\nEntity has language\n\n\nWB4R\nSame as Wikidata\nAligned with Wikidata\n\n\n\n\n\n\n\n12. Theme\n\n\n\nField\nValue\n\n\n\n\nGerman Label\nThema\n\n\nEnglish Label\nTheme\n\n\nDescription\nMain subject or topic of the exhibition\n\n\nData Type\nItem (reference to topic)\n\n\nWikidata Property\nP921\n\n\n\n\nSchema Mappings\n\n\n\nStandard\nProperty\nDescription\n\n\n\n\nWikidata\nP921\nMain subject of exhibition\n\n\nCIDOC CRM\nP129_is_about\nEntity is about topic\n\n\nWB4R\nSame as Wikidata\nAligned with Wikidata\n\n\n\n\n\n\n\n13. Sponsor\n\n\n\nField\nValue\n\n\n\n\nGerman Label\nSponsor\n\n\nEnglish Label\nSponsor\n\n\nDescription\nOrganization or entity sponsoring the exhibition\n\n\nData Type\nItem\n\n\nWikidata Property\nP859\n\n\n\n\nSchema Mappings\n\n\n\nStandard\nProperty\nDescription\n\n\n\n\nWikidata\nP859\nSponsor of exhibition\n\n\nCIDOC CRM\nnot found\nNo direct CRM mapping\n\n\nWB4R\nNot found\nNo WB4R mapping available\n\n\n\n\n\n\n\n14. Number of Visitors\n\n\n\nField\nValue\n\n\n\n\nGerman Label\nBesucherzahl\n\n\nEnglish Label\nNumber of visitors\n\n\nDescription\nTotal number of visitors to the exhibition\n\n\nData Type\nQuantity\n\n\nWikidata Property\nP1174\n\n\nFormat\nNumeric value\n\n\n\n\nSchema Mappings\n\n\n\nStandard\nProperty\nDescription\n\n\n\n\nWikidata\nP1174\nNumber of visitors\n\n\nCIDOC CRM\nnot found\nNo direct CRM mapping\n\n\nWB4R\nNot found\nNo WB4R mapping available\n\n\n\n\n\n\n\n15. Reference\n\n\n\nField\nValue\n\n\n\n\nGerman Label\nReferenz\n\n\nEnglish Label\nReference\n\n\nDescription\nWikidata QID or external identifier URI\n\n\nData Type\nURI\n\n\nFormat\nQ-identifier or full URI\n\n\n\n\nSchema Mappings\n\n\n\n\n\n\n\n\nStandard\nProperty\nDescription\n\n\n\n\nWikidata\nQID\nWikidata identifier\n\n\nCIDOC CRM\nP1_is_identified_by (E42_Identifier)\nIdentifier for entity\n\n\nWB4R\nSame as Wikidata\nAligned with Wikidata\n\n\n\n\n\n\n\n16. Commons Category\n\n\n\nField\nValue\n\n\n\n\nGerman Label\nCommons-Kategorie\n\n\nEnglish Label\nCommons category\n\n\nDescription\nWikimedia Commons category for exhibition images\n\n\nData Type\nString\n\n\nWikidata Property\nP373\n\n\n\n\nSchema Mappings\n\n\n\n\n\n\n\n\nStandard\nProperty\nDescription\n\n\n\n\nWikidata\nP373\nCommons category\n\n\nCIDOC CRM\nP1_is_identified_by (E78_Primitive_Data)\nDigital resource identifier\n\n\nWB4R\nSame as Wikidata\nAligned with Wikidata"
-  },
-  {
-    "objectID": "exhibition-datamodel.html#best-practices-for-exhibition-records",
-    "href": "exhibition-datamodel.html#best-practices-for-exhibition-records",
-    "title": "Exhibition Data Model",
-    "section": "Best Practices for Exhibition Records",
-    "text": "Best Practices for Exhibition Records\n\nUse QIDs for References: Always link to existing Wikidata items when available (Q464980 for exhibitions, institution Q-numbers, country Q-numbers, etc.)\nDate Formatting: Use ISO 8601 format (YYYY-MM-DD) for all temporal data. For exhibitions spanning years, precision can be reduced to YYYY (year only).\nMultilingual Titles: Where applicable, add exhibition titles in multiple languages using separate items or monolingual text fields.\nInstitutional Context: Link to the organizing institution’s Wikidata item (P17 for country, P664 for organizer) to enable cross-institutional exhibition discovery.\nParticipant Documentation: Ensure all participating artists have Wikidata items. Create items for lesser-known artists to enrich the knowledge graph.\nCommons Integration: Regularly link exhibition items to Wikimedia Commons categories (P373) to support multimedia documentation and community contributions."
-  },
-  {
-    "objectID": "exhibition-datamodel.html#related-standards-references",
-    "href": "exhibition-datamodel.html#related-standards-references",
-    "title": "Exhibition Data Model",
-    "section": "Related Standards & References",
-    "text": "Related Standards & References\n\nCIDOC CRM v7.1.3 - Formal ontology standard for cultural heritage\nWikibase4Research (WB4R) - NFDI4Culture platform implementation\nWikidata WikiProject Exhibitions - Community guidelines for exhibition properties\nWikidata Main Properties Guide - Core Wikidata documentation\nLinked Open Exhibition Project - Project repository"
-  },
-  {
-    "objectID": "exhibition-datamodel.html#contact-contributions",
-    "href": "exhibition-datamodel.html#contact-contributions",
-    "title": "Exhibition Data Model",
-    "section": "Contact & Contributions",
-    "text": "Contact & Contributions\nFor updates to this data model or suggestions for improvement, please contact the NFDI4Culture Linked Open Exhibition project team or contribute via GitHub."
-  },
-  {
-    "objectID": "exhibition-datamodel.html#attribution",
-    "href": "exhibition-datamodel.html#attribution",
-    "title": "Exhibition Data Model",
-    "section": "Attribution",
-    "text": "Attribution\nThis data model documentation was created with assistance from GitHub Copilot (powered by Claude Haiku 4.5). The model was aligned against sector standards including CIDOC CRM v7.1.3, Wikibase4Research, and Wikidata WikiProject Exhibitions guidelines through AI-assisted analysis and formatting."
+    "text": "Die Ausstellung sichtbar machen\nEine einfache Quarto-Seite für die Präsentation bereitstellen\nDie Verbindung zu strukturierten Daten aus Wikidata zeigen"
   },
   {
     "objectID": "wikidata.html",

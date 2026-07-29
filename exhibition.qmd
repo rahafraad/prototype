@@ -1,0 +1,22 @@
+---
+title: "Ausstellung"
+---
+
+# Ausstellung
+
+Diese Seite beschreibt die Ausstellung im Rahmen des BIM Prototype 02-Projekts.
+
+## Kurzbeschreibung
+
+Die Ausstellung stellt die Verbindung zwischen kulturellem Kontext, Datenmodellierung und Wikidata dar. Sie dient als Einstiegspunkt für die Erkundung von Objekten, Personen und deren Beziehungen.
+
+## Wikidata-Referenz
+
+- Wikidata-QID: Q138573017
+- Die Seite kann später um zusätzliche Metadaten, Bildmaterial oder verknüpfte Entitäten erweitert werden.
+
+## Ziel der Seite
+
+- Die Ausstellung sichtbar machen
+- Eine einfache Quarto-Seite für die Präsentation bereitstellen
+- Die Verbindung zu strukturierten Daten aus Wikidata zeigen
