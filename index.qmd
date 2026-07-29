@@ -8,7 +8,7 @@ This is the Quarto website source for the BIM prototype project.
 
 ## Featured page
 
-- [Wikidata Item Profile: Q138547468](wikidata-item.html)
+- [Wikidata Item Profile: Q138573017](wikidata-item.html)
 
 ## Changelog
 
